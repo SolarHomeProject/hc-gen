@@ -1,0 +1,16 @@
+[connection]
+id=HT-LAN
+uuid=UUID
+type=ethernet
+interface-name=eth0
+timestamp=TIMESTAMP
+
+[ethernet]
+
+[ipv4]
+method=auto
+
+[ipv6]
+method=disabled
+
+[proxy]

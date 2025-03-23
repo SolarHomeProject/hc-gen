@@ -1,0 +1,1 @@
+root=ROOTDEV rootfstype=ext4 fsck.mode=skip rootwait quiet loglevel=2 vt.global_cursor_default=0 init=/usr/lib/sys-mods/firstboot

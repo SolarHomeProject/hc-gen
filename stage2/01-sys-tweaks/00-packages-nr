@@ -1,0 +1,20 @@
+ssh less psmisc
+debconf-utils
+bash-completion gdb pkg-config
+v4l-utils
+avahi-daemon
+alsa-utils
+ca-certificates curl
+fake-hwclock usbutils
+dosfstools
+dphys-swapfile
+apt-listchanges
+libpam-chksshpwd
+rsync
+htop
+ssh-import-id
+pciutils
+rpi-eeprom
+unzip zip
+file
+parted

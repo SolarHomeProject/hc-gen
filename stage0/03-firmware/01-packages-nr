@@ -1,0 +1,6 @@
+initramfs-tools
+busybox
+zstd
+raspi-firmware
+firmware-linux-free
+linux-image-rpi-v8

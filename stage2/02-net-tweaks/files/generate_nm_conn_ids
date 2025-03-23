@@ -1,0 +1,30 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          generate_nm_conn_ids
+# Required-Start:
+# Required-Stop:
+# Default-Start: 2
+# Default-Stop:
+# Short-Description: Generate hc default nm connection ids
+# Description:
+### END INIT INFO
+. /lib/lsb/init-functions
+case "$1" in
+  start)
+    log_daemon_msg "Starting generate_nm_conn_ids"
+    cd /etc/NetworkManager/system-connections/ &&
+    for conn in HT-LAN.nmconnection WIFI.nmconnection; do
+        uuid=$(cat /proc/sys/kernel/random/uuid)
+        timestamp=$(date +%s)
+        sed -i "s/uuid=UUID/uuid=$uuid/g" $conn
+        sed -i "s/timestamp=TIMESTAMP/timestamp=$timestamp/g" $conn
+    done &&
+    update-rc.d generate_nm_conn_ids remove &&
+    rm /etc/init.d/generate_nm_conn_ids &&
+    log_end_msg $?
+    ;;
+  *)
+    echo "Usage: $0 start" >&2
+    exit 3
+    ;;
+esac
